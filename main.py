@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
+
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")    
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"]= "RAG Document Q&A"
@@ -19,7 +21,6 @@ from langchain.vectorstores import FAISS
 from langchain.chains import create_retrieval_chain
 
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 groq_api_key = os.getenv("GROQ_API_KEY")
 
