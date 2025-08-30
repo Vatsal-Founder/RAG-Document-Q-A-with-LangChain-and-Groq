@@ -8,7 +8,7 @@ load_dotenv()
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")    
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"]= "RAG Document Q&A"
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+
 
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
