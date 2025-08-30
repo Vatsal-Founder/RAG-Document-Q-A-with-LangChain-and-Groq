@@ -8,7 +8,7 @@ load_dotenv()
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")    
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"]= "RAG Document Q&A"
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+os.environ["OPENAI_API_KEY"]=os.getenv("OPENAI_API_KEY")
 
 
 from langchain_groq import ChatGroq
@@ -40,7 +40,7 @@ chat_prompt_template = PromptTemplate(
 
 def create_vector_embedding():
     if 'vectors' not in st.session_state:
-        st.session_state.embeddings=HuggingFaceEmbeddings()
+        st.session_state.embeddings=OpenAIEmbeddings()
         st.session_state.loader = PyPDFLoader("LLM Interview Questions.pdf")
         st.session_state.documents = st.session_state.loader.load()
         st.session_state.text_splitter = RecursiveCharacterTextSplitter(
